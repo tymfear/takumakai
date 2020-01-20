@@ -1,0 +1,45 @@
+<h4>{{header}}</h4>
+<table mat-table [dataSource]="technics" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="6 kyu">
+    <th mat-header-cell *matHeaderCellDef> 6 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('6 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="5 kyu">
+    <th mat-header-cell *matHeaderCellDef> 5 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('5 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="4 kyu">
+    <th mat-header-cell *matHeaderCellDef> 4 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('4 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="3 kyu">
+    <th mat-header-cell *matHeaderCellDef> 3 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('3 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="2 kyu">
+    <th mat-header-cell *matHeaderCellDef> 2 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('2 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="1 kyu">
+    <th mat-header-cell *matHeaderCellDef> 1 Kyu </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('1 kyu')}"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="Shodan">
+    <th mat-header-cell *matHeaderCellDef> Shodan </th>
+    <td mat-cell *matCellDef="let element" [ngClass]="{greyed: !element.level.includes('Shodan')}"> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
